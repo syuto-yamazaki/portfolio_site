@@ -1,0 +1,953 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+
+/* 基本設定 */
+body {
+  font-family: 'Noto Serif JP', 'Shippori Mincho', 'Yu Mincho', serif;
+  margin: 0;
+  padding: 0;
+  color: #111;
+  background-color: #fff;
+  line-height: 2;
+  font-size: 20px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+body.main-page #about img {
+  height: 500px;
+}
+
+/* ヘッダー */
+header {
+  background-color: #fff;
+  padding: 40px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.header-nav a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.header-nav a:hover {
+  color: #00a3af;
+}
+
+.logo {
+    position: absolute;
+    top: 2%;
+    left: 0;
+    width:400px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+  }
+
+.logo-text {
+  font-size: 2rem;  
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width:400px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+/* セクション共通 */
+section {
+  padding: 70px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #4CAF50;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+h1, h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+footer {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.footer-nav a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #00a3af;
+}
+
+.footer-top-btn {
+  margin-bottom: 1rem;
+}
+
+.to-top {
+  display: inline-block;
+  background-color: #00a3af;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, box-shadow 0.3s, opacity 0.3s;
+  opacity: 0.8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.to-top:hover {
+  background-color: #00bfd1;
+  opacity: 1;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*　セクション区切り線 */
+.section-divider {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  margin-top: 60px
+}
+
+.section-divider img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  color: #ffffff;
+}
+/* -------------------index.html　専用スタイル------------------- */
+html.index-page section {
+  padding: 30px 0;
+}
+
+html.index-page .header-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+html.index-page .header-nav a:hover {
+  color: #00c8f8;
+}
+
+html.index-page header {
+  background: url('images/wave-background.jpeg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  position: relative;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header .hero {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* 背景グラデーションが動くアニメーション */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* テキストを包むラッパー */
+html.index-page .hero-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* 見出し（h1） */
+html.index-page .hero h1 {
+  width:max-content;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+  font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* サブテキスト */
+html.index-page .hero p {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-top: 1rem;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 作品を見るボタン */
+html.index-page .hero .hero-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;  
+  background: rgba(255, 255, 255, 0.8); 
+  border-radius: 999px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* 軽めの影をつけて立体感を */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, scale 0.3s ease;
+  border: none;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(5px); 
+}
+
+html.index-page .hero .hero-btn:hover {
+  background: rgba(255, 255, 255, 0.9); 
+  color: #00a3af; 
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* スクロールアニメーション用クラス */
+html.index-page .scroll-anim {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 1s ease, opacity 1s ease;
+}
+html.index-page .scroll-anim.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+html.index-page .scroll-anim.delay {
+  transition-delay: 0.1s;
+}
+
+/* SVG波形装飾 */
+html.index-page .wave svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+html.index-page .floating-circle {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: floatMove 6s ease-in-out infinite alternate;
+  filter: blur(3px);
+}
+
+@keyframes floatMove {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(15px, -20px) scale(1.1);
+  }
+  100% {
+    transform: translate(-10px, 10px) scale(0.95);
+  }
+}
+
+.left-deco {
+  position: absolute;
+  top: 20%;
+  left: 0; 
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.8);
+  opacity: 0.3;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating-shape {
+  position: absolute;
+  top: 70%;
+  right: 20%;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: moveShape 15s infinite linear;
+}
+
+@keyframes moveShape {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(200px, 100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+html.index-page .scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  top: 72%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  animation: fadeIn 2s ease-in-out;
+}
+
+html.index-page .arrow {
+  width: 0;
+  height: 0;
+  margin: 8px auto 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid rgba(255, 255, 255, 0.8);
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* サービス欄用 */
+html.index-page #service {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+html.index-page #service h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+html.index-page .service-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+html.index-page .service-item {
+  flex: 1 1 30%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+html.index-page .service-item:hover {
+  transform: translateY(-5px);
+}
+
+html.index-page .service-icon {
+  width: 98px;
+  height: 102px;
+  margin-top: 1rem;
+  opacity: 0.66;
+  stroke: #333;
+  transition: stroke 0.3s ease, opacity 0.3s ease;
+}
+
+html.index-page .service-item:hover .service-icon {
+  stroke: #00a3af;
+  opacity: 1;
+}
+
+html.index-page .service-item h3 {
+  font-size: 1.9rem;
+  margin-bottom: 0.8rem;
+}
+
+html.index-page .service-item p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+html.index-page .sub-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+
+html.index-page .lead-text {
+  display: block;
+  font-size: 1.3rem; 
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+html.index-page .cta-center {
+  margin-top: 40px;
+  text-align: center;
+}
+
+html.index-page .cta-button {
+  display: inline-block;
+  background-color: #00a3af;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+html.index-page .cta-button:hover {
+  background-color: #007a86;
+}
+
+/* Works分類カード用 */
+html.index-page .works-category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+html.index-page .works-card {
+  display: block;
+  width: 300px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+html.index-page .works-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+html.index-page .works-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+html.index-page .works-card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+html.index-page .works-card-body h3 {
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+html.index-page .works-card-body p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+html.index-page .category-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+html.index-page .category-button:hover {
+  opacity: 0.85;
+}
+/* -------------------contract.html専用スタイル------------------- */
+html.contact-page form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+html.contact-page input, textarea {
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Noto Serif JP', 'Shippori Mincho', 'Yu Mincho', serif;
+}
+
+html.contact-page button {
+  background-color: #00a3af;
+  color: white;
+  padding: 14px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+html.contact-page button:hover {
+  background-color: #007a86;
+}
+
+/* フッター */
+html.contact-page footer {
+  background-color: #fafafa;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+
+/* -------------------about.html専用スタイル------------------- */
+body.about-page #about {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+}
+
+body.about-page .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  text-align: left;
+}
+  
+  body.about-page .profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+  }
+  
+  body.about-page .bio {
+    max-width: 600px;
+    padding-left: 40px;
+  }
+
+  body.about-page h3 {
+    font-family: 'Noto Serif JP', 'Shippori Mincho', 'Yu Mincho', serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #333;
+    text-align: left; 
+    
+  }
+  
+  body.about-page .bio p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+  }
+  
+  body.about-page #skills {
+    padding: 60px 0;
+    background-color: #f7f7f7;
+    text-align: center;
+  }
+  
+  body.about-page #skills h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+  body.about-page .skills-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  body.about-page .skills-list li {
+    font-size: 18px;
+    color: #333;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  body.about-page .skills-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  body.about-page .interview-section {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  body.about-page .interview-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  body.about-page .interview-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  body.about-page .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  body.about-page .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+  }
+
+  /* -------------------works.html専用スタイル------------------- */
+  html.works-page .section-divider{
+    margin-top: 30px;
+  }
+  
+  html.works-page {
+    scroll-behavior: smooth;
+  }
+  
+  html.works-page main {
+    padding: 60px 20px;
+  }
+  
+  html.works-page section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+    position: relative;
+  }
+  
+  html.works-page .category-card {
+    flex: 0 0 auto; /* 横幅固定でスクロール可能に */
+    width: 440px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  html.works-page .category-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  html.works-page .category-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  html.works-page .category-info {
+    padding: 1rem;
+    height:240px;
+    padding: 20px;
+  }
+  
+  html.works-page .category-info h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  html.works-page .category-info p {
+    font-size: 17px;
+    color: #666;
+    padding-top: 27px;
+  }
+  
+
+  html.works-page #customize {
+    padding: 2rem;
+  }
+  
+  html.works-page .works-category-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 1.3rem;
+  }
+
+  html.works-page .scroll-hint-with-icon {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.8;
+  }
+  
+  html.works-page .scroll-hint-with-icon .arrow {
+    font-size: 18px;
+    animation: blinkArrow 1s infinite alternate;
+  }
+  
+  @keyframes blinkArrow {
+    from {
+      opacity: 0.3;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* -------------------実績紹介系ページ専用スタイル------------------- */
+.work-detail-page {
+  font-family: "Helvetica Neue", sans-serif;
+  background: #f8fafa;
+  color: #333;
+}
+
+.work-detail-page .work-detail {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 163, 175, 0.15);
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+.work-detail-page .work-detail h2 {
+  font-size: 1.8rem;
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  color: #00a3af;
+}
+
+.work-detail-page .work-detail h3 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  color: #007d86;
+}
+
+.work-detail-page .work-detail {
+  position: relative; /* ボタンを絶対位置で配置するための基準を設定 */
+}
+
+.work-detail-page .back-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00a3af;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  position: absolute; /* 絶対位置で配置 */
+  right: 13px;
+  top: 22px;
+}
+
+.work-detail-page .back-link:hover {
+  background-color: #008b99; /* ホバー時に色を変更 */
+  transform: translateY(-3px); /* 少し上に浮かせる */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* ホバー時に影を強調 */
+}
+
+.work-detail-page .back-link::before {
+  content: "← "; /* 左に矢印を追加 */
+  font-size: 18px;
+}
+
+.work-detail-page .work-detail dl {
+  margin-top: 1.5rem;
+  text-align: left;
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.work-detail-page .work-detail dt {
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.work-detail-page .work-detail dd {
+  margin-left: 0;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid #00a3af;
+}
+
+.work-detail-page .work-detail ul {
+  text-align: left;
+  margin: 2rem auto;
+  padding-left: 1.5rem;
+  list-style: disc;
+  max-width: 800px;
+}
+
+.work-detail-page .work-detail li {
+  margin-bottom: 1rem;
+}
+
+.work-detail-page .work-detail .section-block {
+  background-color: #ffffff;
+  border-left: 6px solid #00a3af;
+  border-right: 6px solid #00a3af;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 10px rgba(0, 163, 175, 0.08);
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.work-detail-page .work-detail .section-block.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.work-detail-page .work-detail .section-block h3 {
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #007d86;
+}
+
+.work-detail-page .work-detail .section-block h3::before {
+  display: inline-block;
+  width: 6px;
+  height: 24px;
+  background-color: #00a3af;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.work-detail-page .work-detail .section-block ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.work-detail-page .work-detail .section-block li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.work-detail-page .work-detail .section-block li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00a3af;
+  font-weight: bold;
+}

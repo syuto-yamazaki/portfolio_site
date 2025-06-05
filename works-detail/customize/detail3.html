@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja" class="work-detail-page">
+<head>
+  <meta charset="UTF-8">
+  <title>ドラッグストア向けシフト管理システム｜制作実績詳細</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="../../index.html">
+        <img src="../../images/logo.png" alt="サイトロゴ" class="logo">
+      </a>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../works.html">Works</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="work-detail container">
+      <a href="../../works.html" class="back-link">実績一覧に戻る</a>
+      <h2>ドラッグストア業界（小売）向け<br>シフト管理システム開発</h2>
+
+      <dl>
+        <dt>🗓 対応期間：</dt>
+        <dd>2023年8月24日〜2024年4月12日</dd>
+
+        <dt>📂 案件の種別：</dt>
+        <dd>✔ カスタマイズ</dd>
+
+        <dt>🛠 担当工程：</dt>
+        <dd>✔ 実装　✔ テスト</dd>
+      </dl>
+
+      <div class="section-block">
+        <h3>🧾 対応内容</h3>
+        <ul>
+          <li>月間シフト画面で複数店舗を選択し、画面下部に一覧表示できるように対応。</li>
+          <li>各店舗・部門ごとに「過剰コマ数」「不足コマ数」を時間帯単位で登録できるようにし、拠点内での人員の過不足を時間帯ごとに可視化・調整できる機能を実装。</li>
+          <li>他店舗への応援登録を行うことで、薬剤師の店舗間シフト調整を可能に。</li>
+        </ul>
+        <h4 style="margin-bottom: 0.5em;">開発背景</h4>
+        <p style="text-align: left;">
+        調剤部門では薬剤師の人手が慢性的に不足しており、複数店舗を掛け持ちする勤務体制が必要でした。そのため、過剰な人員がいる店舗と、不足している店舗を把握・調整しやすくする仕組みが求められていました。拠点管理者が月間シフト上で過不足を登録・調整することで、現場に即した効率的なシフト作成が可能になりました。
+        </p>
+      </div>
+      
+      <div class="section-block">
+        <h3>💡 工夫・苦労した点 / 自分の成果</h3>
+        <ul>
+          <li>薬剤師・調剤師は一部店舗に1名以上の常駐が必要という制約があり、多店舗間での応援調整を柔軟に行う機能が強く求められていました。</li>
+          <li>応援元と応援先を一目で確認し、スムーズに登録・管理できるUIを実装。</li>
+          <li>過不足のある時間帯をまとめて調整できるダイアログや、店舗間勤務状況を可視化する一覧ダイアログを開発。</li>
+          <li>約9ヶ月にわたる開発で、総額1,000万円規模の大規模カスタマイズを担当。社内でも最大級の案件となり、フロントエンド・バックエンド双方を経験。</li>
+          <li>専門職特有の勤務実態に即した設計により、現場での活用が進み、クライアント企業から高評価をいただく成果に繋がりました。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top-btn">
+        <a href="#" class="to-top">▲ PAGE TOP</a>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../works.html">Works</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <p>Syuto Yamazaki</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll('.section-block');
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+  </script>
+
+</body>
+</html>

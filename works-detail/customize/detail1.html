@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja" class="work-detail-page">
+<head>
+  <meta charset="UTF-8">
+  <title>総合ディスカウントストア向けシフト管理システム｜制作実績詳細</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="../../index.html">
+        <img src="../../images/logo.png" alt="サイトロゴ" class="logo">
+      </a>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../works.html">Works</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="work-detail container">
+      <a href="../../works.html" class="back-link">実績一覧に戻る</a>
+      <h2>ホームセンター業界（小売）向け<br>シフト管理システム開発</h2>
+
+      <dl>
+        <dt>🗓 対応期間：</dt>
+        <dd>2023年6月5日〜2024年7月3日</dd>
+
+        <dt>📂 案件の種別：</dt>
+        <dd>✔ カスタマイズ</dd>
+
+        <dt>🛠 担当工程：</dt>
+        <dd>✔ 実装　✔ テスト</dd>
+      </dl>
+
+      <div class="section-block">
+        <h3>🧾 対応内容</h3>
+        <ul>
+          <li>部門単位でしか確認できなかった日別シフトを、レジ単位で横断的に表示できるよう改善。</li>
+          <li>他部門の従業員をグレー表示し、時間重複時には自部門者を優先表示するよう実装。</li>
+          <li>帳票（PDF）出力機能の追加対応。</li>
+        </ul>
+      </div>
+      
+      <div class="section-block">
+        <h3>💡 工夫・苦労した点 / 自分の成果</h3>
+        <ul>
+          <li>基本設計書から運用意図を読み取り、現場のニーズに即したUI調整を実現。</li>
+          <li>既存コードを解析し、非効率なSQLのクエリを最適化するなど、全体最適を意識した改修に注力</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top-btn">
+        <a href="#" class="to-top">▲ PAGE TOP</a>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../works.html">Works</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <p>Syuto Yamazaki</p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll('.section-block');
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+  </script>
+
+</body>
+</html>

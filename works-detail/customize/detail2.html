@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja" class="work-detail-page">
+<head>
+  <meta charset="UTF-8">
+  <title>総合ディスカウントストア向けシフト管理システム｜制作実績詳細</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="../../index.html">
+        <img src="../../images/logo.png" alt="サイトロゴ" class="logo">
+      </a>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../works.html">Works</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="work-detail container">
+      <a href="../../works.html" class="back-link">実績一覧に戻る</a>
+      <h2>総合ディスカウントストア業界（リユース・レンタル）向け<br>シフト管理システム開発</h2>
+
+      <dl>
+        <dt>🗓 対応期間：</dt>
+        <dd>2023年7月11日〜2023年8月23日</dd>
+
+        <dt>📂 案件の種別：</dt>
+        <dd>✔ カスタマイズ</dd>
+
+        <dt>🛠 担当工程：</dt>
+        <dd>✔ 実装　✔ テスト</dd>
+      </dl>
+
+      <div class="section-block">
+        <h3>🧾 対応内容</h3>
+        <ul>
+          <li>店長が複数店舗を兼任している場合、兼任先の店舗に所属する従業員が、システム上でその店長のシフトを閲覧できないという課題がありました。</li>
+          <li>この課題に対し、店長が店舗を兼任している場合には、兼任先のシフト画面に所属店舗のシフトが表示されるようカスタマイズを実施しました。</li>
+          <li>異動予定がある場合には、店舗異動にあわせて兼任情報を自動的に削除する処理も追加しました。</li>
+          <li>兼任先店舗でのシフト表示は閲覧のみ可能とし、誤操作を防ぐため、表示上は所属従業員と区別できるようオレンジ色で表記。</li>
+          <li>兼任店長は兼任先の「必要人時数」には含めないようにしています。</li>
+        </ul>
+      </div>
+      
+      <div class="section-block">
+        <h3>💡 工夫・苦労した点 / 自分の成果</h3>
+        <ul>
+          <li>店舗運営の実態に即した仕様を目指し、店舗間の兼任や異動といった複雑な勤務形態にも柔軟に対応できるよう設計・実装を工夫しました。</li>
+          <li>特に、「閲覧専用表示」や「必要人時数への非加算」など、現場での誤認や混乱を防ぐ細やかなUI・ロジック調整を意識しました。</li>
+          <li>本機能のカスタマイズ後は、スーパーマーケット業界や薬局業界をはじめとした大手企業様にもご導入いただき、現在も継続的にご活用いただいております。</li>
+          <li>実際に現場での運用に役立てていただけていることに、大きな手応えと成果を感じております。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top-btn">
+        <a href="#" class="to-top">▲ PAGE TOP</a>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../works.html">Works</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <p>Syuto Yamazaki</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll('.section-block');
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+  </script>
+
+</body>
+</html>

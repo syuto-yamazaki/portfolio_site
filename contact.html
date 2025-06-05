@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja" class="contact-page">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お問い合わせ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html">
+        <img src="images/logo.png" alt="サイトロゴ" class="logo">
+      </a>
+      <nav class="header-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="works.html">Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="contact">
+    <div class="container">
+      <h2>お問い合わせ</h2>
+      <form
+        action="https://formspree.io/f/myzwkkbg"
+        method="POST"
+        id="contact-form"
+      >
+        <input type="text" name="name" id="name" placeholder="お名前" required />
+        <input type="email" name="email" id="email" placeholder="メールアドレス" required />
+        <textarea name="message" id="message" placeholder="メッセージ" required></textarea>
+        <button type="submit">送信</button>
+      </form>
+      <div id="form-response" style="display: none; color: green; margin-top: 1em;">
+        ご連絡ありがとうございます。内容を確認のうえ、折り返しご連絡いたします。
+      </div>
+    </div>
+  </section>
+
+  <footer>
+      <p>Syuto Yamazaki</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      $('#contact-form').on('submit', function (e) {
+        e.preventDefault();
+
+        // バリデーション
+        const name = $('#name').val().trim();
+        const email = $('#email').val().trim();
+        const message = $('#message').val().trim();
+        const emailPattern = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+
+        if (!name || !email || !message) {
+          alert('すべての項目を入力してください。');
+          return;
+        }
+
+        if (!emailPattern.test(email)) {
+          alert('有効なメールアドレスを入力してください。');
+          return;
+        }
+
+        // フォーム送信
+        $.ajax({
+          url: $(this).attr('action'),
+          method: 'POST',
+          data: $(this).serialize(),
+          dataType: 'json',
+          success: function () {
+            $('#contact-form').hide();
+            $('#form-response').fadeIn();
+          },
+          error: function () {
+            alert('送信中にエラーが発生しました。時間をおいて再度お試しください。');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
