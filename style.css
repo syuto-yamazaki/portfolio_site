@@ -41,14 +41,17 @@ header {
 }
 
 .logo {
-    position: absolute;
-    top: 2%;
-    left: 0;
-    width:400px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-  }
+  position: absolute;
+  top: 2%;
+  left: 0;
+  width: 25vw; /* 画面幅の30％にサイズを連動 */
+  max-width: 400px; /* 最大幅を400pxに制限 */
+  height: auto; /* アスペクト比を保つ */
+  display: flex;
+  align-items: center;
+  padding-left: 8px
+}
+
 
 .logo-text {
   font-size: 2rem;  
@@ -229,7 +232,10 @@ html.index-page .hero-inner {
 
 /* 見出し（h1） */
 html.index-page .hero h1 {
-  width:max-content;
+  white-space: nowrap;         /* 改行なしで1行固定 */
+  max-width: 100%;             /* 親要素幅を超えない */
+  overflow: hidden;            /* はみ出しは隠す */
+  text-overflow: ellipsis;     /* はみ出したら「...」表示 */
   font-size: 3.5rem;
   font-weight: 700;
   color: #fff;
@@ -547,6 +553,30 @@ html.index-page .category-button {
 html.index-page .category-button:hover {
   opacity: 0.85;
 }
+
+/* ====== 2. タブレット横向き～小型PC（768px〜1024px） ====== */
+@media screen and (max-width: 1200px) {
+  html.index-page .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+/* ====== 3. タブレット縦向き（481px〜767px） ====== */
+@media screen and (max-width: 767px) {
+  html.index-page .hero h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}
+
+/* ====== 4. スマホ（〜480px） ====== */
+@media screen and (max-width: 480px) {
+  html.index-page .hero h1 {
+    font-size: 2rem;
+    padding: 0 1rem;
+    white-space: normal; /* 改行を許す */
+  }
+}
 /* -------------------contract.html専用スタイル------------------- */
 html.contact-page form {
   max-width: 600px;
@@ -702,6 +732,83 @@ body.about-page .profile {
     border-radius: 10px;
   }
 
+.skills {
+  max-width: 700px;
+  margin: 2rem auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.5;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #222;
+  letter-spacing: 0.05em;
+}
+
+.skill-category {
+  margin-bottom: 2rem;
+  background: #f9f9f9;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.skill-category h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #00a3af;
+  border-bottom: 2px solid #00a3af;
+  padding-bottom: 0.3rem;
+  letter-spacing: 0.05em;
+}
+
+.skill-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.skill-table th, .skill-table td {
+  text-align: left;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.skill-table th {
+  background-color: #00a3af;
+  color: #f1f8ff;
+  font-weight: 600;
+}
+
+.skill-table tr:hover {
+  background-color: #f1f8ff;
+}
+
+.skill-table td:nth-child(3) {
+  color: #666;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 480px) {
+  .skills {
+    padding: 0 1rem;
+  }
+  .skill-table th, .skill-table td {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+
   /* -------------------works.html専用スタイル------------------- */
   html.works-page .section-divider{
     margin-top: 30px;
@@ -838,10 +945,10 @@ body.about-page .profile {
 
 .work-detail-page .back-link {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 6px 13px;
   background-color: #00a3af;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   text-decoration: none;
   border-radius: 30px;

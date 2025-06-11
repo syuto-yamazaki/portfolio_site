@@ -2,7 +2,7 @@
 <html lang="ja" class="work-detail-page">
 <head>
   <meta charset="UTF-8">
-  <title>総合ディスカウントストア向けシフト管理システム｜制作実績詳細</title>
+  <title>SQL自動生成ツール開発による新人支援DX</title>
   <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
@@ -26,38 +26,34 @@
   <main>
     <section class="work-detail container">
       <a href="../../works.html" class="back-link">実績一覧に戻る</a>
-      <h2>ホームセンター業界（小売）向け<br>シフト管理システム開発</h2>
+      <h2>SQL自動生成ツール開発による新人支援DX</h2>
 
       <dl>
         <dt>🗓 対応期間：</dt>
-        <dd>2023年6月5日〜2024年7月3日</dd>
+        <dd>2024年 スポット対応（社内改善PJ）</dd>
 
         <dt>📂 案件の種別：</dt>
-        <dd>✔ カスタマイズ</dd>
+        <dd>✔ 社内DX　✔ツール開発</dd>
 
         <dt>🛠 担当工程：</dt>
-        <dd>✔ 実装　✔ 単体テスト・結合テスト　✔ リリース　✔ 保守・運用</dd>
+        <dd>✔ 実装　✔ 単体テスト・結合テスト</dd>
       </dl>
 
       <div class="section-block">
         <h3>🧾 対応内容</h3>
         <ul>
-          <li>部門単位でしか確認できなかった日別シフトを、レジ単位で横断的に表示できるよう改善。</li>
-          <li>他部門の従業員をグレー表示し、時間重複時には自部門者を優先表示するよう実装。</li>
-          <li>帳票（PDF）出力機能の追加対応。</li>
+            <li>新人開発者のSQL作成支援を目的とし、PythonでSQL自動生成ツールを新規開発。</li>
+            <li>シフト・従業員データなど複雑なテーブル構成に対応し、選択された条件に応じて最適なSQLを出力。</li>
+            <li>研究開発チームと連携し、実業務に沿ったクエリパターンや機能要件を整理して仕様化。</li>
         </ul>
-        <h4 style="margin-bottom: 0.5em;">開発背景</h4>
-        <p style="text-align: left;">
-            クライアント店舗において、部門間での人員融通を円滑にする必要があり、従来の部門単位のシフト確認では運用に支障が出ていました。
-            また、レジ業務の負荷分散や人員配置の最適化を図るため、レジ単位でのシフト表示機能が求められました。
-        </p>
       </div>
       
       <div class="section-block">
         <h3>💡 工夫・苦労した点 / 自分の成果</h3>
         <ul>
-          <li>基本設計書から運用意図を読み取り、現場のニーズに即したUI調整を実現。</li>
-          <li>既存コードを解析し、非効率なSQLのクエリを最適化するなど、全体最適を意識した改修に注力</li>
+            <li>SQL構造の理解に時間を要する新人開発者に対し、選択項目ベースでクエリを自動生成する仕組みを設計し、教育工数の削減に貢献。</li>
+            <li>不要なデータ取得を避けるため、結合条件やWHERE句のロジックを最適化し、パフォーマンスと負荷のバランスを意識。</li>
+            <li>一部のPythonコードの作成やロジック調整にも携わり、ツールの精度・実用性の向上に貢献。</li>
         </ul>
       </div>
     </section>
@@ -79,6 +75,7 @@
       <p>CodeGrow<br>Syuto Yamazaki</p>
     </div>
   </footer>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
         const sections = document.querySelectorAll('.section-block');

@@ -2,7 +2,7 @@
 <html lang="ja" class="work-detail-page">
 <head>
   <meta charset="UTF-8">
-  <title>総合ディスカウントストア向けシフト管理システム｜制作実績詳細</title>
+  <title>遊技場業界向け｜シフト確定時の労働基準法警告対応強化</title>
   <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
@@ -26,42 +26,43 @@
   <main>
     <section class="work-detail container">
       <a href="../../works.html" class="back-link">実績一覧に戻る</a>
-      <h2>ホームセンター業界（小売）向け<br>シフト管理システム開発</h2>
+      <h2>遊技場業界向け｜シフト確定時の労働基準法警告対応強化<br>シフト管理システム開発</h2>
 
       <dl>
         <dt>🗓 対応期間：</dt>
-        <dd>2023年6月5日〜2024年7月3日</dd>
+        <dd>2024年対応案件</dd>
 
         <dt>📂 案件の種別：</dt>
-        <dd>✔ カスタマイズ</dd>
+        <dd>✔ 導入カスタマイズ</dd>
 
         <dt>🛠 担当工程：</dt>
         <dd>✔ 実装　✔ 単体テスト・結合テスト　✔ リリース　✔ 保守・運用</dd>
       </dl>
 
-      <div class="section-block">
+    <div class="section-block">
         <h3>🧾 対応内容</h3>
         <ul>
-          <li>部門単位でしか確認できなかった日別シフトを、レジ単位で横断的に表示できるよう改善。</li>
-          <li>他部門の従業員をグレー表示し、時間重複時には自部門者を優先表示するよう実装。</li>
-          <li>帳票（PDF）出力機能の追加対応。</li>
+            <li>労基警告時にもシフト確定を禁止する新たな設定項目をシステムに追加。</li>
+            <li>店長の権限設定を強化し、警告がある場合はシフト確定操作を不可に。</li>
+            <li>既存の労働基準法チェック機能と連携し、運用要件に柔軟に対応。</li>
         </ul>
         <h4 style="margin-bottom: 0.5em;">開発背景</h4>
         <p style="text-align: left;">
-            クライアント店舗において、部門間での人員融通を円滑にする必要があり、従来の部門単位のシフト確認では運用に支障が出ていました。
-            また、レジ業務の負荷分散や人員配置の最適化を図るため、レジ単位でのシフト表示機能が求められました。
+            通常、労働基準法違反があった場合はシフトの確定ができない仕様ですが、警告の場合は確認の上でシフト確定が可能でした。
+            お客様は労働基準法への意識が非常に高く、警告レベルの場合でもシフト確定を禁止してほしいというご要望がございました。
         </p>
-      </div>
-      
-      <div class="section-block">
+    </div>
+
+    <div class="section-block">
         <h3>💡 工夫・苦労した点 / 自分の成果</h3>
         <ul>
-          <li>基本設計書から運用意図を読み取り、現場のニーズに即したUI調整を実現。</li>
-          <li>既存コードを解析し、非効率なSQLのクエリを最適化するなど、全体最適を意識した改修に注力</li>
+            <li>労基警告時のシフト確定禁止により、コンプライアンス遵守を強化。</li>
+            <li>店長の誤操作防止により、労働基準法違反の未然防止を実現。</li>
+            <li>厳格な運用ルールに対応し、システムの信頼性向上に貢献。</li>
         </ul>
-      </div>
+    </div>
     </section>
-  </main>
+</main>
 
   <footer>
     <div class="container">
@@ -79,6 +80,7 @@
       <p>CodeGrow<br>Syuto Yamazaki</p>
     </div>
   </footer>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
         const sections = document.querySelectorAll('.section-block');

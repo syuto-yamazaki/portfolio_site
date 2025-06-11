@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja" class="work-detail-page">
+<head>
+  <meta charset="UTF-8">
+  <title>全社一斉メジャーバージョンアップ対応プロジェクト</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="../../index.html">
+        <img src="../../images/logo.png" alt="サイトロゴ" class="logo">
+      </a>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../works.html">Works</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="work-detail container">
+      <a href="../../works.html" class="back-link">実績一覧に戻る</a>
+      <h2>全社一斉メジャーバージョンアップ対応プロジェクト<br>シフト管理システム開発</h2>
+
+      <dl>
+        <dt>🗓 対応期間：</dt>
+        <dd>2025年対応案件</dd>
+
+        <dt>📂 案件の種別：</dt>
+        <dd>✔ バージョンアップに関するカスタマイズ</dd>
+
+        <dt>🛠 担当工程：</dt>
+        <dd>✔ 調査　✔ 設計　✔ 実装　✔ 単体テスト・結合テスト　✔ リリース　✔ 保守・運用</dd>
+      </dl>
+
+    <div class="section-block">
+        <h3>🧾 対応内容</h3>
+        <ul>
+            <li>旧バージョンのカスタマイズ機能を洗い出し、対応可否を判断。リニューアル版へ設計・開発を推進。</li>
+            <li>設計ではUI統一や共通部品化を実施し、可読性・再利用性の向上を図った。</li>
+            <li>ユーザーがカスタマイズ機能のオンオフを設定画面で操作できる仕組みを詳細設計・実装。</li>
+            <li>結合テストやリリース作業、保守対応までカスタマイズチームの中核メンバーとして担当。</li>
+        </ul>
+        <h4 style="margin-bottom: 0.5em;">開発背景</h4>
+        <p style="text-align: left;">
+            本年メインの大規模プロジェクトとして、既存の個別カスタマイズ機能を整理し、安定稼働と移行コストの削減を両立する必要がありました。
+            また、約110社の顧客移行を段階的に進めるため、全体の設計方針と進捗管理が求められました。
+        </p>
+    </div>
+
+    <div class="section-block">
+        <h3>💡 工夫・苦労した点 / 自分の成果</h3>
+        <ul>
+            <li>複雑なカスタマイズ仕様を構造的に整理し、リニューアル版へのスムーズな移行を実現。</li>
+            <li>共通部品化と設定画面の拡充により、運用性と保守性が大幅に向上。</li>
+            <li>全社の段階的移行計画を策定し、安定したリリースと初期対応を実現。</li>
+            <li>設計から実装、テスト、リリースまで一貫対応できるプロジェクト推進力と技術力を強化。</li>
+        </ul>
+    </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+    <div class="footer-top-btn">
+        <a href="#" class="to-top">▲ PAGE TOP</a>
+    </div>
+    <nav class="footer-nav">
+        <ul>
+            li><a href="../../index.html">Home</a></li>
+            li><a href="../../about.html">About</a></li>
+            li><a href="../../works.html">Works</a></li>
+            li><a href="../../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <p>CodeGrow<br>Syuto Yamazaki</p>
+    </div>
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll('.section-block');
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+  </script>
+
+</body>
+</html>
