@@ -40,6 +40,22 @@ header {
   color: #00a3af;
 }
 
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+  font-size: 25px;
+}
+
 .logo {
   position: absolute;
   top: 2%;
@@ -68,22 +84,38 @@ header {
   align-items: center;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0 0 0;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
+.br-sp {
+  display: inline;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #111;
-  font-weight: bold;
-  font-size: 25px;
-}
+/* スマホ（～480px）対応 */
+@media screen and (max-width: 480px) {
 
+  .logo-text {
+    font-size: 1.8rem;  
+  }
+
+  .br-sp {
+    display: block;
+  }
+}
+@media screen and (max-width: 950px) {
+  html.index-page .header-nav ul {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  html.index-page .header-nav li {
+    margin-bottom: 0.5rem;
+  }
+
+  html.index-page nav ul li a {
+    font-size: 20px;
+    padding-right: 10px
+  }
+}
 /* セクション共通 */
 section {
   padding: 70px 0;
@@ -561,10 +593,10 @@ html.index-page .category-button:hover {
   }
 }
 
-/* ====== 3. タブレット縦向き（481px〜767px） ====== */
-@media screen and (max-width: 767px) {
+/* ====== 3. タブレット縦向き（481px〜1024px） ====== */
+@media screen and (max-width: 1024px) {
   html.index-page .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     text-align: center;
   }
 }
@@ -572,9 +604,9 @@ html.index-page .category-button:hover {
 /* ====== 4. スマホ（〜480px） ====== */
 @media screen and (max-width: 480px) {
   html.index-page .hero h1 {
-    font-size: 2rem;
+    font-size: 1.7rem;
     padding: 0 1rem;
-    white-space: normal; /* 改行を許す */
+    
   }
 }
 /* -------------------contract.html専用スタイル------------------- */
